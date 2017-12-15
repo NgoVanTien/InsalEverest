@@ -45,6 +45,12 @@ gem "config"
 gem "figaro"
 gem "paranoia", "~> 2.2"
 gem "cancancan", "~> 1.10"
+gem "grape"
+gem "active_model_serializers"
+gem "grape-active_model_serializers"
+# gem "rack-cors", :require => "rack/cors"
+# gem "mini_magick" image
+gem "grape-swagger"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,6 +64,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :staging do
+  gem "factory_girl_rails"
+  gem "faker"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
