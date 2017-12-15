@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :tables, only: [:index]
     resources :products, only: [:index]
   end
+
+  mount API => "/"
 end

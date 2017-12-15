@@ -1,0 +1,28 @@
+en:
+  api_error:
+    unauthorized: "Unauthorized"
+    validation_errors: "Validations Error"
+    token_expired: "Expired token"
+    pwd_not_correct: "Password not correct"
+    record_not_found: "Record not found"
+    unauthenticated: "Unauthenticated"
+    wrong_email_password: "Email or password is wrong"
+    unexpected_exception: "Unexpected exception"
+    invalid_confirm_mail_token: "Invalid confirm mail token."
+    wrong_http_status_code: "Status code must be Integer or Symbol."
+    wrong_current_password: "Wrong current password"
+    email_already_in_use: "Email address already in use"
+    email_is_not_confirmed: "You need to confirm email first"
+    payment_invalid: "The service is invalid"
+    default_card_not_exist: "You need to set a default card first"
+    invalid_recurring_payment: "Invalid recurring payment"
+    invalid_plan_type: "You can only set auto payment on service with standard plan"
+    recaptcha_verification_failed: "reCaptcha verification failed, please try again."
+    cannot_buy_service_has_many_programs: "You could not buy a service which has many programs."
+    cannot_auto_renewal_on_many_services: "You could not set auto renewal on many services."
+    product_code_not_available: "Selected product code is not available for this action."
+    wrong_url: "Please check the URL."
+    user_code_not_found: "There is no service use registration with your ID."
+  errors:
+    messages:
+      mini_magick_processing_error: "Please upload a image file less than 5MB"

@@ -1,3 +1,38 @@
 per_page:
   admins:
     category: 10
+
+error_formatter:
+  error_code_key: "error_code"
+  error_codes:
+    data_operation: 600
+    unauthorized: 601
+    token_expired: 602
+    record_not_found: 603
+    validation_errors: 604
+    unauthenticated: 606
+    wrong_email_password: 607
+    unexpected_exception: 608
+    invalid_confirm_mail_token: 609
+    record_invalid: 610
+    wrong_current_password: 611
+    email_already_in_use: 612
+    email_is_not_confirmed: 613
+    reset_password_token_expired: 614
+    confirm_email_token_expired: 615
+    invalid_reset_password_token: 616
+    payment_invalid: 617
+    default_card_not_exist: 618
+    invalid_recurring_payment: 619
+    invalid_plan_type: 620
+    invalid_recaptcha_token: 622
+    recaptcha_verification_failed: 623
+    cannot_buy_service_has_many_programs: 624
+    cannot_auto_renewal_on_many_services: 625
+    wrong_url: 626
+    user_code_not_found: 627
+  message_key: "message"
+  
+validations:
+  email_regex: !ruby/regexp '/\A([a-zA-Z0-9][\w\.\+\-]*)@([\w.\-]+\.+[\w]{2,})\z/'
+  password_regex: !ruby/regexp '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,24}$/'
