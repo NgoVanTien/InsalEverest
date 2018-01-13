@@ -4,6 +4,8 @@ class Table < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :products, through: :orders
 
+  enum state: {empty: 0, pending: 1, ordered: 2}
+
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.validations.name.max_length}
 
   mount_uploader :image, ImageUploader
