@@ -22,5 +22,4 @@ vn:
     create_success: "Tạo mới thành công."
     update_success: "Cập nhật mới thành công."
     delete_success: "Xóa thành công."
-  errors:
-    blank: "Không tìm thấy thông tin."
+    not_found: "Không tìm thấy thông tin."
