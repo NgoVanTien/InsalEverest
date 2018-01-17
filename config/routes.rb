@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :positions, only: [:create, :update, :destroy]
       resources :products, only: [:create, :update, :destroy]
       resources :manager_tables, only: :index
+      resources :orders, only: [:create, :update, :show]
     end
   end
 end
