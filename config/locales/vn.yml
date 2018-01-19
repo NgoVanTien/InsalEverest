@@ -1,7 +1,7 @@
 vn:
   time:
     formats:
-      full_date: "%d/%m/%Y"
+      full_datetime: "%d/%m/%Y %H:%M:%S"
   activerecord:
     errors:
       models:
