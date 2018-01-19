@@ -44,6 +44,6 @@ class Api::V1::OrdersController < Api::V1::BaseController
   def load_order
     @order = Order.find_by id: params[:id]
     return if @order.present?
-    render_json_error({"order": I18n.t("activerecord.errors.models.order.attributes.id.not_found")}, 422)
+    render_json_error({"order": I18n.t("activerecord.errors.models.order.attributes.id.not_found")}, 401)
   end
 end

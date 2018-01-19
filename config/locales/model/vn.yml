@@ -20,3 +20,11 @@ vn:
               too_long: "Tên tầng tối đa %{count} ký tự"
             position:
               not_found: "Tầng không tìm thấy"
+        order:
+          attributes:
+            id:
+              not_found: "Không tìm thấy đồ uống đã gọi"
+            table:
+              required: "Bàn không hợp lệ."
+            product_orders:
+              not_found: "Đồ uống này không tìm thấy."

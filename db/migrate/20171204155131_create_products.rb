@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.integer :quantity, default: 0
       t.text :description
       t.integer :state, default: 0
+      t.float :price, default: 0.0
       t.references :unit, foreign_key: true, null: false
       t.references :category, foreign_key: true, null: false
 

@@ -1,4 +1,7 @@
 vn:
+  time:
+    formats:
+      full_date: "%d/%m/%Y"
   activerecord:
     errors:
       models:
@@ -18,12 +21,10 @@ vn:
               blank: "Thể loại không được để trống."
             name:
               blank: "Tên không được để trống."
-        order:
-          attributes:
-            id:
-              not_found: "Không tìm thấy đồ uống đã gọi"
   messages:
     create_success: "Tạo mới thành công."
     update_success: "Cập nhật mới thành công."
     delete_success: "Xóa thành công."
     not_found: "Không tìm thấy thông tin."
+    payment_success: "Thanh toán thành công."
+    payment_fail: "Thanh toán không thành công."

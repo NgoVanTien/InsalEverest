@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :products, only: [:create, :update, :destroy]
       resources :manager_tables, only: :index
       resources :orders, only: [:create, :update, :show]
+      resources :pay_orders, only: :create
     end
   end
 end

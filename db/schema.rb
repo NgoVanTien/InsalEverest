@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20171217123313) do
   create_table "positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "code"
     t.string   "name"
+    t.string   "image"
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -124,10 +125,11 @@ ActiveRecord::Schema.define(version: 20171217123313) do
     t.integer  "quantity",                  default: 0
     t.text     "description", limit: 65535
     t.integer  "state",                     default: 0
-    t.integer  "unit_id",                               null: false
-    t.integer  "category_id",                           null: false
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.float    "price",       limit: 24,    default: 0.0
+    t.integer  "unit_id",                                 null: false
+    t.integer  "category_id",                             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["unit_id"], name: "index_products_on_unit_id", using: :btree
   end
@@ -184,6 +186,7 @@ ActiveRecord::Schema.define(version: 20171217123313) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
     t.string   "name"
+    t.string   "avatar"
     t.text     "address",                limit: 65535
     t.integer  "gender",                               default: 0
     t.date     "birthday"

@@ -47,6 +47,6 @@ class Api::V1::PositionsController < Api::V1::BaseController
   def load_position
     @position = Position.find_by id: params[:id]
     return if @position.present?
-    render_json_error({"position": I18n.t("activerecord.errors.models.position.attributes.position.not_found")}, 422)
+    render_json_error({"position": I18n.t("activerecord.errors.models.position.attributes.position.not_found")}, 401)
   end
 end
