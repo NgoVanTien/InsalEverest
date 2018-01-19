@@ -47,6 +47,6 @@ class Api::V1::TablesController < Api::V1::BaseController
   def load_table
     @table = Table.find_by id: params[:id]
     return if @table.present?
-    render_json_error({"table": I18n.t("activerecord.errors.models.table.attributes.table.not_found")}, 422)
+    render_json_error({"table": I18n.t("activerecord.errors.models.table.attributes.table.not_found")}, 401)
   end
 end

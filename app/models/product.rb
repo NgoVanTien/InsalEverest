@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   has_many :product_orders, dependent: :destroy
   has_many :orders, through: :product_orders
-  has_many :discount, dependent: :destroy
+  has_many :discounts, dependent: :destroy
 
   validates :name, presence: true
   validates :unit_id, presence: true
