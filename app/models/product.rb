@@ -11,4 +11,6 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
 
   mount_uploader :image, ImageUploader
+
+  delegate :name, to: :unit, prefix: true, allow_nil: true
 end
