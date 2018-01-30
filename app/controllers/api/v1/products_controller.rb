@@ -1,10 +1,6 @@
 class Api::V1::ProductsController < Api::V1::BaseController
   before_action :check_product, only: [:update, :destroy]
 
-  def index
-    render_json_data({data: load_products, message: {success: I18n.t("messages.list_product")}}, 201)
-  end
-
   def create
     product = Product.new product_params
     if product.save
@@ -36,13 +32,5 @@ class Api::V1::ProductsController < Api::V1::BaseController
   def check_product
     @product = Product.find_by id: params[:id]
     render_json_error({product: I18n.t("messages.not_found")}, 422) unless @product
-  end
-
-  def load_products
-    Category.all.map{|category| [CategorySerializer.new(category), list_product(category)]}
-  end
-
-  def list_product category
-    category.products.map{|product| ProductDetailSerializer.new(product)}
   end
 end
