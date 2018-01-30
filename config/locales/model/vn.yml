@@ -28,3 +28,7 @@ vn:
               required: "Bàn không hợp lệ."
             product_orders:
               not_found: "Đồ uống này không tìm thấy."
+        category:
+          attributes:
+            category:
+              not_found: "Loại này không tìm thấy."
