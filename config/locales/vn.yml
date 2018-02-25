@@ -29,3 +29,10 @@ vn:
     payment_success: "Thanh toán thành công."
     payment_fail: "Thanh toán không thành công."
     list_product: "Danh sách tất cả đồ uống"
+    list_table: "Danh sách tất cả bàn"
+    not_found: "%{name} không tìm thấy!"
+  forders:
+    table: "Bàn"
+    category: "Danh mục"
+    order: "Gọi đồ uống"
+    product: "Đồ uống"

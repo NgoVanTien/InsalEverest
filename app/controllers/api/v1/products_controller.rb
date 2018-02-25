@@ -31,6 +31,6 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def check_product
     @product = Product.find_by id: params[:id]
-    render_json_error({product: I18n.t("messages.not_found")}, 422) unless @product
+    render_json_error({product: I18n.t("messages.not_found", name: I18n.t("forders.product"))}, 422) unless @product
   end
 end
