@@ -1,5 +1,7 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :table_id, :state, :time_in, :time_out
+  attributes :id, :state, :time_in, :time_out
+
+  belongs_to :table, serializer: TableOrderSerializer
 
   has_many :product_orders, serializer: ProductOrderSerializer
 

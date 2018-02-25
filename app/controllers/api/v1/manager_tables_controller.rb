@@ -7,7 +7,12 @@ class Api::V1::ManagerTablesController < Api::V1::BaseController
     when "Positions"
       render_json_data({data: positions_info}, 201)
     else
-      render_json_data({data: {}, message: {warning: I18n.t("messages.not_found")}}, 401)
+      render_json_data(
+        {
+          data: {},
+          message: {warning: I18n.t("messages.not_found", name: I18n.t("forders.table"))}
+        }, 401
+      )
     end
   end
 

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :update]
       resources :sessions, only: [:create]
       resources :categories, only: [:create, :update, :destroy]
-      resources :tables, only: [:create, :update, :destroy]
+      resources :tables, only: [:index, :create, :update, :destroy]
       resources :positions, only: [:create, :update, :destroy]
       resources :products, only: [:create, :update, :destroy]
       resources :manager_tables, only: :index

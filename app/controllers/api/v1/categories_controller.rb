@@ -31,7 +31,7 @@ class Api::V1::CategoriesController < Api::V1::BaseController
 
   def check_category
     @category = Category.find_by id: params[:id]
-    render_json_error({category: I18n.t("messages.not_found")}, 422) unless @category
+    render_json_error({category: I18n.t("messages.not_found", name: I18n.t("forders.category"))}, 422) unless @category
   end
 
   def response_data category

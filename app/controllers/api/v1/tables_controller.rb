@@ -1,6 +1,15 @@
 class Api::V1::TablesController < Api::V1::BaseController
   before_action :load_table, only: [:update, :destroy]
 
+  def index
+    render_json_data(
+      {
+        data: Table.all.map{|table| response_data(TableOrderSerializer, table)},
+        message: {success: I18n.t("messages.list_table")}
+      }, 201
+    )
+  end
+
   def create
     tables = Table.create_multi_record params[:table].as_json, params[:number].to_i
     if tables
