@@ -4,7 +4,7 @@ class Api::V1::TablesController < Api::V1::BaseController
   def index
     render_json_data(
       {
-        data: Table.all.map{|table| response_data(TableOrderSerializer, table)},
+        data: Position.all.map{|position| load_tables position},
         message: {success: I18n.t("messages.list_table")}
       }, 201
     )
@@ -57,5 +57,14 @@ class Api::V1::TablesController < Api::V1::BaseController
     @table = Table.find_by id: params[:id]
     return if @table.present?
     render_json_error({"table": I18n.t("activerecord.errors.models.table.attributes.table.not_found")}, 401)
+  end
+
+  def load_tables position
+    {
+      "position_id_#{position.id}": {
+        name: position.name,
+        tables: position.tables.map{|table| response_data(TableOrderSerializer, table)}
+      }
+    }
   end
 end
