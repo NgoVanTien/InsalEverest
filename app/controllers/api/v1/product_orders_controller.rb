@@ -6,6 +6,6 @@ class Api::V1::ProductOrdersController < Api::V1::BaseController
   private
 
   def load_products
-    Category.all.map{|category| {"category_#{category.id}": response_data(ProductsSerializer, category)}}
+    Category.all.map{|category| response_data(ProductsSerializer, category)}
   end
 end
