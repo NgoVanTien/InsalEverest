@@ -20,7 +20,7 @@ class Api::V1::ManagerTablesController < Api::V1::BaseController
 
   def tables_state
     {
-      empty: Table.all.empty.count,
+      empty: Table.all.is_empty.count,
       active: Table.where(state: %i(pending ordered)).count
     }
   end

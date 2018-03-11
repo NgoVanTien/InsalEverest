@@ -2,7 +2,8 @@ class Api::V1::PayOrdersController < Api::V1::BaseController
   before_action :load_order, only: :create
 
   def create
-    if Payment.new({total: params[:total], order: @order}).order
+    if Payment.new({total: params[:total], order: @order}).order &&
+        UpdateTable.new.changed_state((@order.add_table_ids << table.id), :is_empty)
       render_json_data({message: {success: I18n.t("messages.payment_success")}}, 201)
     else
       render_json_data({message: {warning: I18n.t("messages.payment_fail")}}, 422)

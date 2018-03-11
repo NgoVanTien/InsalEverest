@@ -63,7 +63,7 @@ class Api::V1::TablesController < Api::V1::BaseController
     {
       "position_id_#{position.id}": {
         name: position.name,
-        tables: position.tables.map{|table| response_data(TableOrderSerializer, table)}
+        tables: position.tables.map{|table| response_data(TablesSerializer, table)}
       }
     }
   end
