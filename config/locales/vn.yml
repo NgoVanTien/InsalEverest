@@ -31,6 +31,10 @@ vn:
     list_product: "Danh sách tất cả đồ uống"
     list_table: "Danh sách tất cả bàn"
     not_found: "%{name} không tìm thấy!"
+    change_success: "Thay đổi %{name} thành công."
+    change_fail: "Thay đổi %{name} không thành công."
+    merge_success: "Gộp bàn thành công."
+    merge_fail: "Gộp bàn không thành công."
   forders:
     table: "Bàn"
     category: "Danh mục"

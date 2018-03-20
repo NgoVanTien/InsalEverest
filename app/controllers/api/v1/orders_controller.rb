@@ -1,10 +1,12 @@
 class Api::V1::OrdersController < Api::V1::BaseController
-  before_action :changed_state_table, only: [:create, :update]
   before_action :load_order, only: [:update, :show]
+  before_action :changed_state_table, only: :update
 
   def create
     order = Order.new order_params
-    if order.save
+    table = Table.find_by(id: params[:table_id])&.update state: :pending
+    render_json_error({"table": I18n.t("messages.not_found", name: I18n.t("forders.table"))}, 401) unless table
+    if order.save &&
       render_json_data(
         {
           data: response_data(OrderSerializer, order),
@@ -50,8 +52,10 @@ class Api::V1::OrdersController < Api::V1::BaseController
 
   def changed_state_table
     table = Table.find_by id: params[:table_id]
+    table_ids = @order.add_table_ids
     if table.present?
-      table.update state: :pending
+      table_ids << table.id
+      UpdateTable.new.changed_state table_ids, :pending
     else
       render_json_error({"table": I18n.t("messages.not_found", name: I18n.t("forders.table"))}, 401)
     end

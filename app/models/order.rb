@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  serialize :add_table_ids, Array
+
   belongs_to :table, required: true
 
   has_many :product_orders, dependent: :destroy

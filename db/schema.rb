@@ -91,11 +91,12 @@ ActiveRecord::Schema.define(version: 20171217123313) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "table_id",                            null: false
-    t.integer  "state",                 default: 0
-    t.float    "total",      limit: 24, default: 0.0
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "table_id",                               null: false
+    t.integer  "state",                    default: 0
+    t.float    "total",         limit: 24, default: 0.0
+    t.string   "add_table_ids"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["table_id"], name: "index_orders_on_table_id", using: :btree
   end
 

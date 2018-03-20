@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :orders, only: [:create, :update, :show]
       resources :pay_orders, only: :create
       resources :product_orders, only: :index
+      resources :event_tables, only: :index
     end
   end
 end
